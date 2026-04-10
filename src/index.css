@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .paper-theme {
+    background-color: #fdfcf0; /* Light warm yellowish/off-white */
+    background-image: linear-gradient(transparent 95%, #cbd5e1 95%);
+    background-size: 100% 2.5rem; /* Matches a 10 (or 2.5rem) line height */
+    line-height: 2.5rem;
+  }
+}
