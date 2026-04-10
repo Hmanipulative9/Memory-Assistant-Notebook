@@ -253,7 +253,7 @@ export default function Notebook() {
           </div>
 
           {/* Right Column: Notes (2/3) */}
-          <div className={`md:col-span-2 p-6 min-h-[500px] transition-all duration-500 ${hideNotes ? 'blur-2xl opacity-25 select-none pointer-events-none' : ''}`}>
+          <div className={`md:col-span-2 p-6 min-h-[500px] transition-all duration-500 ${hideNotes ? 'blur-[10px] opacity-80 select-none pointer-events-none' : ''}`}>
              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Notes</h3>
             <textarea
               value={content}
