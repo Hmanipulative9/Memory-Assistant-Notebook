@@ -204,7 +204,19 @@ export default function Notebook() {
                   </button>
                   <div className="px-4 py-3 border-t border-slate-100">
                     <label className="text-xs font-medium text-slate-600 block mb-2">Custom Color</label>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                       {['#fdfcf0', '#ecfdf5', '#eff6ff', '#fdf2f8', '#f5f3ff'].map(c => (
+                         <button 
+                           key={c}
+                           onClick={() => { setCustomColor(c); setTheme('custom'); }}
+                           className={`w-6 h-6 rounded-full border shadow-sm transition-transform hover:scale-110 ${customColor === c && theme === 'custom' ? 'border-indigo-600 ring-2 ring-indigo-200 ring-offset-1' : 'border-slate-300'}`}
+                           style={{ backgroundColor: c }}
+                           title={c}
+                         />
+                       ))}
+                    </div>
                     <div className="flex items-center gap-2">
+                       <span className="text-xs text-slate-500 font-medium">Pick any:</span>
                        <input 
                         type="color" 
                         value={customColor}
@@ -212,7 +224,7 @@ export default function Notebook() {
                           setCustomColor(e.target.value); 
                           setTheme('custom');
                         }}
-                        className="h-8 w-full p-0 border-0 rounded cursor-pointer"
+                        className="h-6 w-full max-w-[80px] p-0 border-0 rounded cursor-pointer"
                       />
                     </div>
                   </div>
@@ -241,7 +253,7 @@ export default function Notebook() {
           </div>
 
           {/* Right Column: Notes (2/3) */}
-          <div className={`md:col-span-2 p-6 min-h-[500px] transition-all duration-300 ${hideNotes ? 'blur-md opacity-60 select-none' : ''}`}>
+          <div className={`md:col-span-2 p-6 min-h-[500px] transition-all duration-500 ${hideNotes ? 'blur-2xl opacity-25 select-none pointer-events-none' : ''}`}>
              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Notes</h3>
             <textarea
               value={content}
